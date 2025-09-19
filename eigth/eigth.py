@@ -5,7 +5,7 @@ import json
 
 
 class ConfigManager:
-    #Context manager for reading and writing JSON configuration
+    """Context manager for reading and writing JSON configuration"""
 
     def __init__(self, filename):
         #Initialize
@@ -35,4 +35,5 @@ if __name__ == "__main__":
     with ConfigManager("config.json") as config:
         config["theme"] = "light"
         config["font_size"] = 10
+
         print(json.dumps(config, indent=4))
