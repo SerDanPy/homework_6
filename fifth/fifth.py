@@ -6,7 +6,7 @@ from contextlib import contextmanager
 
 @contextmanager
 def limit_generator(generator, limit):
-    #Context manager to limit the number of generated items
+    """Context manager to limit the number of generated items"""
     count = 0
     iterator = iter(generator)
     try:
@@ -33,4 +33,5 @@ if __name__ == "__main__":
         with limit_generator(even_numbers(), 100) as limited:
             for num in limited:
                 file.write(f"{num}\n")
+
                 print(num, end=" ")
