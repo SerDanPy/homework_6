@@ -6,18 +6,18 @@ class ReverseFileIterator:
     """Iterator to read a file line by line in reverse order."""
 
     def __init__(self, filename):
-        #Initialize with the filename
+        """Initialize with the filename"""
         self.filename = filename
         with open(filename, 'r', encoding='utf-8') as file:
             self.lines = file.readlines()
         self.index = len(self.lines) - 1
 
     def __iter__(self):
-        #Return the iterator object
+        """Return the iterator object"""
         return self
 
     def __next__(self):
-        #Return the next line in reverse order
+        """Return the next line in reverse order"""
         if self.index < 0:
             raise StopIteration
         line = self.lines[self.index].strip()
@@ -32,4 +32,5 @@ if __name__ == "__main__":
 
     # Iterate over file in reverse
     for line in ReverseFileIterator("log.txt"):
+
         print(line)
