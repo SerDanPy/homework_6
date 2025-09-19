@@ -8,11 +8,11 @@ class UniqueIdIterator:
     """Iterator to generate unique UUID identifiers."""
 
     def __iter__(self):
-        #Return the iterator object
+        """Return the iterator object"""
         return self
 
     def __next__(self):
-        #Generate and return a unique UUID
+        """Generate and return a unique UUID"""
         return str(uuid.uuid4())
 
 
@@ -20,4 +20,5 @@ if __name__ == "__main__":
     id_iterator = UniqueIdIterator()
     count = int(input("Введіть к-сть потрібних ключів\n--->"))
     for i in range(count):
+
         print(next(id_iterator))
