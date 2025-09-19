@@ -7,7 +7,9 @@ import os
 
 
 class BackupManager:
+    """Create class BackupManager with functions of opening, closing a file and creating a backup copy"""
 
+    
     def __init__(self, filename):
         #Initialize
         self.filename = filename
@@ -49,4 +51,5 @@ if __name__ == "__main__":
 
     #Check file content
     with open("data.txt", "r", encoding="utf-8") as file:
+
         print(f"Остаточний варіант: {file.read()}")
