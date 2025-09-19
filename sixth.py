@@ -5,7 +5,7 @@ import os
 
 
 class DirectoryIterator:
-    #Iterator to yield files and their sizes in a directoru
+    """Iterator to yield files and their sizes in a directory"""
 
     def __init__(self, directory):
         #Initialize with directory path
@@ -30,4 +30,5 @@ class DirectoryIterator:
 
 if __name__ == "__main__":
     for file_info in DirectoryIterator("C:/Program Files (x86)/Adobe/Acrobat Reader DC/Reader/acrocef_1"):
+
         print(f"Файл: {file_info['filename']}, Розмір: {file_info['size']} байтів")
