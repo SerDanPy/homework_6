@@ -14,13 +14,14 @@ def parse_errors(filename):
 
 
 if __name__ == "__main__":
-    #Create log file
+    """Create log file"""
     with open("logs.log", "w", encoding="utf-8") as file:
         file.write("200 OK: GET /index.html\n404 Not Found: GET /page\n500 Error: POST /api\n404 Error")
 
-    #Save errors
+    """Save errors"""
     with open("errors.log", "w", encoding="utf-8") as output_file:
         for line in parse_errors("logs.log"):
             print(line)
 
             output_file.write(line + "\n")
+
