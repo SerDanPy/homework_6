@@ -11,7 +11,7 @@ class BackupManager:
 
     
     def __init__(self, filename):
-        #Initialize
+        """Initialize"""
         self.filename = filename
         self.backup_filename = filename + ".bak"
 
@@ -29,17 +29,17 @@ class BackupManager:
 
 
 if __name__ == "__main__":
-    #Create test file
+    """Create test file"""
     with open("data.txt", "w", encoding="utf-8") as file:
         file.write("Початкові дані\nДані початкові\nЯкісь дані\nЩе раз якісь дані")
 
-    #Testing success
+    """Testing success"""
     with BackupManager("data.txt"):
         with open("data.txt", "w", encoding="utf-8") as file:
             file.write("А це нові дані\nЩе раз якісь нові дані\nІ можна ще раз якісь дані")
     print("Файл успішно оновлено")
 
-    #Testing error
+    """Testing error"""
     print("\nТестування помилки")
     try:
         with BackupManager("data.txt"):
@@ -49,7 +49,8 @@ if __name__ == "__main__":
     except ValueError:
         print("")
 
-    #Check file content
+    """Check file content"""
     with open("data.txt", "r", encoding="utf-8") as file:
 
         print(f"Остаточний варіант: {file.read()}")
+
