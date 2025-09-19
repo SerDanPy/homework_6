@@ -28,10 +28,11 @@ def even_numbers():
 
 
 if __name__ == "__main__":
-    #First 100 numbers to file
+    """First 100 numbers to file"""
     with open("even_numbers.txt", "w", encoding="utf-8") as file:
         with limit_generator(even_numbers(), 100) as limited:
             for num in limited:
                 file.write(f"{num}\n")
 
                 print(num, end=" ")
+
