@@ -3,7 +3,7 @@
 
 
 def parse_errors(filename):
-    #Generator to yield log lines with 4XX or 5XX status codes
+    """Generator to yield log lines with 4XX or 5XX status codes"""
     try:
         with open(filename, 'r', encoding='utf-8') as file:
             for line in file:
@@ -22,4 +22,5 @@ if __name__ == "__main__":
     with open("errors.log", "w", encoding="utf-8") as output_file:
         for line in parse_errors("logs.log"):
             print(line)
+
             output_file.write(line + "\n")
