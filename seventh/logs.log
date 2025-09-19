@@ -1,0 +1,4 @@
+200 OK: GET /index.html
+404 Not Found: GET /page
+500 Error: POST /api
+404 Error
