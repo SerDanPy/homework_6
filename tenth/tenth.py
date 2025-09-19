@@ -10,13 +10,13 @@ class ArchiveManager:
     """Create class ArchiveManager with functions"""
 
     def __init__(self, archive_name, files):
-        #Initialize
+        """Initialize"""
         self.archive_name = archive_name
         self.files = files
         self.zip_file = None
 
     def __enter__(self):
-        #Enter file
+        """Enter file"""
         self.zip_file = zipfile.ZipFile(self.archive_name, 'w', zipfile.ZIP_DEFLATED)
         for file in self.files:
             if os.path.exists(file):
@@ -24,18 +24,18 @@ class ArchiveManager:
         return self.zip_file
 
     def __exit__(self, exc_type, exc_value, traceback):
-        #Exit file
+        """Exit file"""
         self.zip_file.close()
 
 
 if __name__ == "__main__":
-    #Create test files
+    """Create test files"""
     with open("file1.txt", "w", encoding="utf-8") as file:
         file.write("А це дані")
     with open("file2.txt", "w", encoding="utf-8") as file:
         file.write("Ще раз якісь дані")
 
-    # Create archive
+    """Create archive"""
     with ArchiveManager("archive.zip", ["file1.txt", "file2.txt"]):
         pass
     print("Архів створено archive.zip")
@@ -46,3 +46,4 @@ if __name__ == "__main__":
         pass
 
     print(f"Архів створено з іменем: {name_archive}.zip ")"""
+
