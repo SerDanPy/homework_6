@@ -3,7 +3,7 @@
 
 
 def filter_file(filename, keyword):
-    #Generator to yield lines containing a specific keyword
+    """Generator to yield lines containing a specific keyword"""
     try:
         with open(filename, 'r', encoding='utf-8') as file:
             for line in file:
@@ -23,3 +23,4 @@ if __name__ == "__main__":
         for line in filter_file("test.log", "ERROR"):
             print(line)
             output_file.write(line + "\n")
+
