@@ -7,7 +7,7 @@ import os
 
 
 class ArchiveManager:
-
+    """Create class ArchiveManager with functions"""
 
     def __init__(self, archive_name, files):
         #Initialize
@@ -44,4 +44,5 @@ if __name__ == "__main__":
 """ name_archive = input("Введіть ім'я архіву\n--->")
     with ArchiveManager(name_archive, ["file1.txt", "file2.txt"]):
         pass
+
     print(f"Архів створено з іменем: {name_archive}.zip ")"""
